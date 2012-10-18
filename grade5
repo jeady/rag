@@ -21,7 +21,7 @@ EndOfHelp
   exit
 end
 
-usage() if (ARGV.length!=4 || ARGV[0] =~ /^-?-h/)
+usage() if (ARGV.length<4 || ARGV[0] =~ /^-?-h/)
 g = AutoGrader.create('5',
                       'HW5Grader',
                       ARGV[0],
