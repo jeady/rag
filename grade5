@@ -28,7 +28,19 @@ g = AutoGrader.create('5',
                       {
                         :admin_user => ARGV[1],
                         :admin_pass => ARGV[2],
-                        :spec => ARGV[3]
+                        :spec => ARGV[3] + '/part1_spec.rb'
+                      })
+g.grade!
+puts "Score out of 100: #{g.normalized_score(100)}\n"
+puts "---BEGIN rspec comments---\n#{'-'*80}\n#{g.comments}\n#{'-'*80}\n---END rspec comments---"
+
+g = AutoGrader.create('5',
+                      'HW5Grader',
+                      ARGV[0],
+                      {
+                        :admin_user => ARGV[1],
+                        :admin_pass => ARGV[2],
+                        :spec => ARGV[3] + '/part2_spec.rb'
                       })
 g.grade!
 puts "Score out of 100: #{g.normalized_score(100)}\n"
