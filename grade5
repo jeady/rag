@@ -31,6 +31,7 @@ g = AutoGrader.create('5',
                         :spec => ARGV[3] + '/part1_spec.rb'
                       })
 g.grade!
+puts "Partners: #{ARGV[4..-1].join(',')}"
 puts "Score out of 100: #{g.normalized_score(100)}\n"
 puts "---BEGIN rspec comments---\n#{'-'*80}\n#{g.comments}\n#{'-'*80}\n---END rspec comments---"
 
@@ -43,6 +44,7 @@ g = AutoGrader.create('5',
                         :spec => ARGV[3] + '/part2_spec.rb'
                       })
 g.grade!
+puts "Partners: #{ARGV[4..-1].join(',')}"
 puts "Score out of 100: #{g.normalized_score(100)}\n"
 puts "---BEGIN rspec comments---\n#{'-'*80}\n#{g.comments}\n#{'-'*80}\n---END rspec comments---"
 
